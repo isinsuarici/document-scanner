@@ -35,6 +35,16 @@ launch = False
 w = 400 ;h = 600
 size = (w, h)
 
+def start_app():
+    pass
+
+
+def crop_img():
+    pass
+
+
+def pdf_generator():
+    pass
 
 
 
