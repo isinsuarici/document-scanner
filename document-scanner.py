@@ -48,15 +48,3 @@ def pdf_generator():
 
 
 
-def main():
-    img = cv2.imread("C:/Users/Isinsu/Desktop/PROJECTS/document-scanner/imgs/img1.png",0)
-    
-    cv2.imshow('img', img)
-    
-    cv2.waitKey(0)    
-    cv2.destroyAllWindows()
-    
-
-if __name__ == '__main__':
-    main()
-
