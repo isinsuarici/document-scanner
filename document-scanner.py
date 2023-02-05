@@ -7,8 +7,8 @@ Created on Sat Feb  4 03:00:11 2023
 import cv2
 import numpy as np
 import glob,os
-import thinker as tk
-from thinker import *
+import tkinter as tk
+from tkinter import *
 
 import time, datetime
 from urllib.request import urlopen
