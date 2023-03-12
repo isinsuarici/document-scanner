@@ -36,12 +36,19 @@ size = (w, h)
 # window.mainloop()
 
 def open_cam():
-    
+    url = entry_text.get() 
     capture_button= tk.Button(window,text="Capture Image",bg= "pink",width=20,
-                              height=2, font=('times',20,'italic bold'))
-    
-    capture_button.pack()
+                              height=2, font=('times',20,'italic bold'),activebackground='purple')
     capture_button.place(x=50,y=600)
+    
+    pdf_img = PIL.Image.open('./meta_data/pdf.png')
+    pdf_img = pdf_img.resize((130, 80),PIL.Image.ANTIALIAS)
+    pdf_img = ImageTk.PhotoImage(pdf_img)
+    
+    button_pdf_img = Button(window, borderwidth=0, command=pdf_generator, image=pdf_img, bg='white')
+    button_pdf_img.pack()
+    button_pdf_img.image = pdf_img
+    button_pdf_img.place(x=700, y=15)
 
 
 def crop_img():
