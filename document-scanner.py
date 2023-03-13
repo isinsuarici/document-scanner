@@ -38,6 +38,7 @@ size = (w, h)
 def open_cam():
     global capture_button, button_pdf_img
     url = entry_text.get() 
+    
     capture_button= tk.Button(window,text="Capture Image",bg= "pink",width=20,
                               height=2, font=('times',20,'italic bold'),activebackground='purple')
     capture_button.place(x=50,y=600)
@@ -53,10 +54,13 @@ def open_cam():
     
     try:
         if url== '':
-            msg= tk.Label(window,text="It is not the correct URL! Please check it.", width=40,height=1,
+            msg= tk.Label(window,text="Write your URL.", width=40,height=1,
                           fg='white',bg='red',font=('arial',15))
             msg.place(x=20,y=60)
+            
             window.after(2000,destroy_widget,msg)
+            capture_button.destroy()
+            button_pdf_img.destroy()
         else:
             global disp, imgFrame, button_turnOff, img
             imgFrame = tk.Frame(window)
@@ -91,10 +95,8 @@ def open_cam():
                         bg="red",font=('arial',15))
         msg1.place(x=20, y=60)
         window.after(2000, destroy_widget, msg1)
-        imgFrame.destroy()
-        disp.destroy()
-        button_turnOff.destroy()
-        capture_button.destroy()
+        destroy_cam()
+        button_pdf_img.destroy()
 
 def crop_img():
     pass
